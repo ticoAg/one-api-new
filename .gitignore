@@ -1,0 +1,11 @@
+.idea
+.vscode
+upload
+*.exe
+*.db
+build
+*.db-journal
+logs
+data
+/web/node_modules
+cmd.md

@@ -9,6 +9,8 @@ import (
 	"github.com/songquanpeng/one-api/relay/relaymode"
 	"io"
 	"net/http"
+	"fmt"
+	"time"
 )
 
 type Adaptor struct {
@@ -23,9 +25,48 @@ func (a *Adaptor) GetRequestURL(meta *meta.Meta) (string, error) {
 	return GetFullRequestURL(meta.BaseURL, meta.RequestURLPath, meta.ChannelType), nil
 }
 
+
+var apiKeyCache = make(map[string]string)
+var apiKeyExpireTime = make(map[string]time.Time)
+
+func getAPIKey(appKey, appSecret string) (string, error) {
+    if apiKey, ok := apiKeyCache[appKey]; ok && time.Now().Before(apiKeyExpireTime[appKey]) {
+        return apiKey, nil
+    }
+	// 配置请求URL: https://middle-open-platform.ennew.com/admin/client/getToken
+    resp, err := http.PostForm("https://middle-open-platform.ennew.com/admin/client/getToken",
+        url.Values{"appKey": {appKey}, "appSecret": {appSecret}})
+    if err != nil {
+        return "", fmt.Errorf("failed to get API key: %v", err)
+    }
+    defer resp.Body.Close()
+
+    var apiKeyResponse struct {
+        Code    int         `json:"code"`
+        Data    string      `json:"data"`
+        ExpireAt time.Time `json:"expireAt"`
+    }
+    if err := json.NewDecoder(resp.Body).Decode(&apiKeyResponse); err != nil {
+        return "", fmt.Errorf("failed to parse API key response: %v", err)
+    }
+
+    if apiKeyResponse.Code != 200 {
+        return "", fmt.Errorf("failed to get API key, got non-200 status code: %d", apiKeyResponse.Code)
+    }
+
+    // 存储API Key和过期时间
+    apiKeyCache[appKey] = apiKeyResponse.Data
+    apiKeyExpireTime[appKey] = apiKeyResponse.ExpireAt
+
+    return apiKeyResponse.Data, nil
+}
 func (a *Adaptor) SetupRequestHeader(c *gin.Context, req *http.Request, meta *meta.Meta) error {
+	apiKey, err := getAPIKey(meta.AppKey, meta.AppSecret)
+	if err != nil {
+        return fmt.Errorf("failed to get API key: %v", err)
+    }
 	adaptor.SetupCommonRequestHeader(c, req, meta)
-	req.Header.Set("X-GW-Authorization", meta.APIKey)
+	req.Header.Set("X-GW-Authorization", apiKey)
 	return nil
 }
 

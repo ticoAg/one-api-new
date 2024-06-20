@@ -11,6 +11,7 @@ export const CHANNEL_OPTIONS = [
     {key: 17, text: '阿里通义千问', value: 17, color: 'orange'},
     {key: 18, text: '讯飞星火认知', value: 18, color: 'blue'},
     {key: 16, text: '智谱 ChatGLM', value: 16, color: 'violet'},
+    {key: 41, text: '恩牛', value: 41, color: 'purple'},
     {key: 19, text: '360 智脑', value: 19, color: 'blue'},
     {key: 25, text: 'Moonshot AI', value: 25, color: 'black'},
     {key: 23, text: '腾讯混元', value: 23, color: 'teal'},
@@ -38,6 +39,5 @@ export const CHANNEL_OPTIONS = [
     {key: 6, text: '代理：OpenAI Max', value: 6, color: 'violet'},
     {key: 9, text: '代理：AI.LS', value: 9, color: 'yellow'},
     {key: 12, text: '代理：API2GPT', value: 12, color: 'blue'},
-    {key: 13, text: '代理：AIGC2D', value: 13, color: 'purple'},
-    {key: 41, text: '恩牛', value: 41, color: 'purple'}
+    {key: 13, text: '代理：AIGC2D', value: 13, color: 'purple'}
 ];

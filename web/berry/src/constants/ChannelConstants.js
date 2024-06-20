@@ -5,6 +5,18 @@ export const CHANNEL_OPTIONS = {
     value: 1,
     color: 'success'
   },
+  8: {
+    key: 8,
+    text: '自定义渠道',
+    value: 8,
+    color: 'error'
+  },
+  41: {
+    key: 41,
+    text: '恩牛',
+    value: 41,
+    color: 'success'
+  },
   14: {
     key: 14,
     text: 'Anthropic Claude',
@@ -161,12 +173,6 @@ export const CHANNEL_OPTIONS = {
     value: 39,
     color: 'primary'
   },
-  8: {
-    key: 8,
-    text: '自定义渠道',
-    value: 8,
-    color: 'error'
-  },
   22: {
     key: 22,
     text: '知识库：FastGPT',
@@ -238,11 +244,5 @@ export const CHANNEL_OPTIONS = {
     text: '代理：AIGC2D',
     value: 13,
     color: 'success'
-  },
-  41: {
-    key: 41,
-    text: '恩牛',
-    value: 41,
-    color: 'primary'
   }
 };

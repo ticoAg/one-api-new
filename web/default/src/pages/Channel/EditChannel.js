@@ -424,7 +424,7 @@ const EditChannel = () => {
             />
           </Form.Field>
           {
-            inputs.type === 33 && (
+            (inputs.type === 33 || inputs.type === 41) && (
               <Form.Field>
                 <Form.Input
                   label='Region'

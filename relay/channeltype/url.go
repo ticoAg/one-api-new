@@ -41,8 +41,8 @@ var ChannelBaseURLs = []string{
 	"https://api.cloudflare.com",                // 37
 	"https://api-free.deepl.com",                // 38
 	"https://api.together.xyz",                  // 39
-	"https://open-platform-gateway.ennew.com",   // 40
-	"https://ark.cn-beijing.volces.com",         // 41
+	"https://ark.cn-beijing.volces.com",   	     // 40
+	"https://open-platform-gateway.ennew.com",   // 41
 }
 
 func init() {

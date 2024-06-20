@@ -209,20 +209,41 @@ const typeConfig = {
       key: '',
       config: {
         region: 'Region',
-        ak: 'appKey',
-        sk: 'appSecret'
+        ak: 'Access Key',
+        sk: 'Secret Key'
       }
     },
     prompt: {
       key: '',
       config: {
-        region: 'region，e.g. https://open-platform-gateway.ennew.com/algorithm/alg102790',
-        ak: '恩牛授权应用 appKey',
-        sk: '恩牛授权应用 appSecret'
+        region: 'region，e.g. us-west-2',
+        ak: 'AWS IAM Access Key',
+        sk: 'AWS IAM Secret Key'
       }
     },
-    modelGroup: 'ennew'
+    modelGroup: "ali"
   }
+  // ,
+  // 41: {
+  //   inputLabel: {
+  //     name: '恩牛',
+  //     key: '',
+  //     config: {
+  //       region: 'Region',
+  //       ak: 'appKey',
+  //       sk: 'appSecret'
+  //     }
+  //   },
+  //   prompt: {
+  //     key: '',
+  //     config: {
+  //       region: 'region，e.g. https://open-platform-gateway.ennew.com/algorithm/alg102790',
+  //       ak: '恩牛授权应用 appKey',
+  //       sk: '恩牛授权应用 appSecret'
+  //     }
+  //   },
+  //   modelGroup: 'ali'
+  // }
 };
 
 export { defaultConfig, typeConfig };

@@ -243,6 +243,6 @@ export const CHANNEL_OPTIONS = {
     key: 41,
     text: '恩牛',
     value: 41,
-    color: 'success'
+    color: 'primary'
   }
 };

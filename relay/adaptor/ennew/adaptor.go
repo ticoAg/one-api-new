@@ -44,7 +44,6 @@ func getAPIKey(appKey, appSecret string) (string, error) {
     var apiKeyResponse struct {
         Code    int         `json:"code"`
         Data    string      `json:"data"`
-        ExpireAt time.Time `json:"expireAt"`
     }
     if err := json.NewDecoder(resp.Body).Decode(&apiKeyResponse); err != nil {
         return "", fmt.Errorf("failed to parse API key response: %v", err)
@@ -54,14 +53,14 @@ func getAPIKey(appKey, appSecret string) (string, error) {
         return "", fmt.Errorf("failed to get API key, got non-200 status code: %d", apiKeyResponse.Code)
     }
 
-    // 存储API Key和过期时间
+    // 存储API Key和过期时间（过期时间为24小时后）
     apiKeyCache[appKey] = apiKeyResponse.Data
-    apiKeyExpireTime[appKey] = apiKeyResponse.ExpireAt
+    apiKeyExpireTime[appKey] = time.Now().Add(24 * time.Hour) // 过期时间为24小时后
 
     return apiKeyResponse.Data, nil
 }
 func (a *Adaptor) SetupRequestHeader(c *gin.Context, req *http.Request, meta *meta.Meta) error {
-	apiKey, err := getAPIKey(meta.AppKey, meta.AppSecret)
+	apiKey, err := getAPIKey(meta.Config.AK, meta.Config.SK)
 	if err != nil {
         return fmt.Errorf("failed to get API key: %v", err)
     }

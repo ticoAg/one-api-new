@@ -203,6 +203,25 @@ const typeConfig = {
       }
     },
     modelGroup: 'Coze'
+  },
+  41: {
+    inputLabel: {
+      key: '',
+      config: {
+        region: 'Region',
+        ak: 'appKey',
+        sk: 'appSecret'
+      }
+    },
+    prompt: {
+      key: '',
+      config: {
+        region: 'region，e.g. https://open-platform-gateway.ennew.com/algorithm/alg102790',
+        ak: '恩牛授权应用 appKey',
+        sk: '恩牛授权应用 appSecret'
+      }
+    },
+    modelGroup: 'ennew'
   }
 };
 

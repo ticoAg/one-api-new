@@ -11,6 +11,8 @@ import (
 	"net/http"
 	"fmt"
 	"time"
+	"encoding/json"
+	"net/url"
 )
 
 type Adaptor struct {
@@ -33,9 +35,12 @@ func getAPIKey(appKey, appSecret string) (string, error) {
     if apiKey, ok := apiKeyCache[appKey]; ok && time.Now().Before(apiKeyExpireTime[appKey]) {
         return apiKey, nil
     }
+	formData := url.Values{}
+	formData.Set("appKey", appKey)
+	formData.Set("appSecret", appSecret)
+
 	// 配置请求URL: https://middle-open-platform.ennew.com/admin/client/getToken
-    resp, err := http.PostForm("https://middle-open-platform.ennew.com/admin/client/getToken",
-        url.Values{"appKey": {appKey}, "appSecret": {appSecret}})
+    resp, err := http.PostForm("https://middle-open-platform.ennew.com/admin/client/getToken", formData)
     if err != nil {
         return "", fmt.Errorf("failed to get API key: %v", err)
     }

@@ -469,7 +469,7 @@ const EditChannel = () => {
               />)
           }
           {
-            inputs.type !== 33 && (batch ? <Form.Field>
+            inputs.type !== 33 && inputs.type !== 41 && (batch ? <Form.Field>
               <Form.TextArea
                 label='密钥'
                 name='key'
@@ -508,7 +508,7 @@ const EditChannel = () => {
             )
           }
           {
-            inputs.type !== 33 && !isEdit && (
+            inputs.type !== 33 && inputs.type !== 41 && !isEdit && (
               <Form.Checkbox
                 checked={batch}
                 label='批量创建'
@@ -518,7 +518,7 @@ const EditChannel = () => {
             )
           }
           {
-            inputs.type !== 3 && inputs.type !== 33 && inputs.type !== 8 && inputs.type !== 22 && (
+            inputs.type !== 3 && inputs.type !== 33 && inputs.type !== 41 && inputs.type !== 8 && inputs.type !== 22 && (
               <Form.Field>
                 <Form.Input
                   label='代理'

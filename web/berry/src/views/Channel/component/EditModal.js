@@ -37,35 +37,35 @@ const checkedIcon = <CheckBoxIcon fontSize="small" />;
 
 const filter = createFilterOptions();
 const validationSchema = Yup.object().shape({
-  is_edit: Yup.boolean(),
-  name: Yup.string().required('名称 不能为空'),
-  type: Yup.number().required('渠道 不能为空'),
-  key: Yup.string().when(['is_edit', 'type'], {
-    is: (is_edit, type) => !is_edit && type !== 33,
-    then: Yup.string().required('密钥 不能为空')
-  }),
-  other: Yup.string(),
-  models: Yup.array().min(1, '模型 不能为空'),
-  groups: Yup.array().min(1, '用户组 不能为空'),
-  base_url: Yup.string().when('type', {
-    is: (value) => [3, 8].includes(value),
-    then: Yup.string().required('渠道API地址 不能为空'), // base_url 是必需的
-    otherwise: Yup.string() // 在其他情况下，base_url 可以是任意字符串
-  }),
-  model_mapping: Yup.string().test('is-json', '必须是有效的JSON字符串', function (value) {
-    try {
-      if (value === '' || value === null || value === undefined) {
-        return true;
-      }
-      const parsedValue = JSON.parse(value);
-      if (typeof parsedValue === 'object') {
-        return true;
-      }
-    } catch (e) {
-      return false;
-    }
-    return false;
-  })
+  // is_edit: Yup.boolean(),
+  // name: Yup.string().required('名称 不能为空'),
+  // type: Yup.number().required('渠道 不能为空'),
+  // key: Yup.string().when(['is_edit', 'type'], {
+  //   is: (is_edit, type) => !is_edit && type !== 33,
+  //   then: Yup.string().required('密钥 不能为空')
+  // }),
+  // other: Yup.string(),
+  // models: Yup.array().min(1, '模型 不能为空'),
+  // groups: Yup.array().min(1, '用户组 不能为空'),
+  // base_url: Yup.string().when('type', {
+  //   is: (value) => [3, 8].includes(value),
+  //   then: Yup.string().required('渠道API地址 不能为空'), // base_url 是必需的
+  //   otherwise: Yup.string() // 在其他情况下，base_url 可以是任意字符串
+  // }),
+  // model_mapping: Yup.string().test('is-json', '必须是有效的JSON字符串', function (value) {
+  //   try {
+  //     if (value === '' || value === null || value === undefined) {
+  //       return true;
+  //     }
+  //     const parsedValue = JSON.parse(value);
+  //     if (typeof parsedValue === 'object') {
+  //       return true;
+  //     }
+  //   } catch (e) {
+  //     return false;
+  //   }
+  //   return false;
+  // })
 });
 
 const EditModal = ({ open, channelId, onCancel, onOk }) => {

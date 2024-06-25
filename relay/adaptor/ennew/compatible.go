@@ -13,7 +13,7 @@ import (
 	"github.com/songquanpeng/one-api/relay/adaptor/stepfun"
 	"github.com/songquanpeng/one-api/relay/adaptor/togetherai"
 	"github.com/songquanpeng/one-api/relay/channeltype"
-	"github.com/ticoAg/one-api-new/relay/adaptor/ennew"
+	// "github.com/ticoAg/one-api-new/relay/adaptor/ennew"
 )
 
 var CompatibleChannels = []int{
@@ -57,7 +57,8 @@ func GetCompatibleChannelMeta(channelType int) (string, []string) {
 	case channeltype.TogetherAI:
 		return "together.ai", togetherai.ModelList
 	case channeltype.Doubao:
-		return "doubao", doubao.ModelList
+		// return "doubao", doubao.ModelList
+		return "groq", groq.ModelList
 	case channeltype.Enniu:
 		return "ennew", ennew.ModelList
 	default:

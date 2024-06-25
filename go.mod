@@ -1,4 +1,4 @@
-module github.com/songquanpeng/one-api
+module github.com/ticoAg/one-api-new
 
 // +heroku goVersion go1.18
 go 1.20
@@ -21,6 +21,7 @@ require (
 	github.com/pkg/errors v0.9.1
 	github.com/pkoukk/tiktoken-go v0.1.7
 	github.com/smartystreets/goconvey v1.8.1
+	github.com/songquanpeng/one-api v0.6.7-alpha.9
 	github.com/stretchr/testify v1.9.0
 	golang.org/x/crypto v0.23.0
 	golang.org/x/image v0.16.0
@@ -44,7 +45,6 @@ require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/dgryski/go-rendezvous v0.0.0-20200823014737-9f7001d12a5f // indirect
 	github.com/dlclark/regexp2 v1.11.0 // indirect
-	github.com/fsnotify/fsnotify v1.7.0 // indirect
 	github.com/gabriel-vasile/mimetype v1.4.3 // indirect
 	github.com/gin-contrib/sse v0.1.0 // indirect
 	github.com/go-playground/locales v0.14.1 // indirect
@@ -64,7 +64,6 @@ require (
 	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/jtolds/gls v4.20.0+incompatible // indirect
 	github.com/klauspost/cpuid/v2 v2.2.7 // indirect
-	github.com/kr/text v0.2.0 // indirect
 	github.com/leodido/go-urn v1.4.0 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
 	github.com/mattn/go-sqlite3 v2.0.3+incompatible // indirect

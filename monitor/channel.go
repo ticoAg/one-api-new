@@ -2,10 +2,10 @@ package monitor
 
 import (
 	"fmt"
-	"github.com/songquanpeng/one-api/common/config"
-	"github.com/songquanpeng/one-api/common/logger"
-	"github.com/songquanpeng/one-api/common/message"
-	"github.com/songquanpeng/one-api/model"
+	"github.com/ticoAg/one-api-new/common/config"
+	"github.com/ticoAg/one-api-new/common/logger"
+	"github.com/ticoAg/one-api-new/common/message"
+	"github.com/ticoAg/one-api-new/model"
 )
 
 func notifyRootUser(subject string, content string) {

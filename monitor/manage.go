@@ -1,8 +1,8 @@
 package monitor
 
 import (
-	"github.com/songquanpeng/one-api/common/config"
-	"github.com/songquanpeng/one-api/relay/model"
+	"github.com/ticoAg/one-api-new/common/config"
+	"github.com/ticoAg/one-api-new/relay/model"
 	"net/http"
 	"strings"
 )

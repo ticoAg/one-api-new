@@ -2,8 +2,8 @@ package ennew
 
 import (
 	"fmt"
-	"github.com/songquanpeng/one-api/common/logger"
-	"github.com/songquanpeng/one-api/relay/model"
+	"github.com/ticoAg/one-api-new/common/logger"
+	"github.com/ticoAg/one-api-new/relay/model"
 	"strconv"
 )
 

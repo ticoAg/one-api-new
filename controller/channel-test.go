@@ -120,7 +120,7 @@ func testChannel(channel *model.Channel) (err error, openaiErr *relaymodel.Error
 		return err, nil
 	}
 	// 打印channel的所有信息
-	logger.SysLog(fmt.Sprintf("Current channel: %s", channel))
+	// logger.SysLog(fmt.Sprintf("Current channel: %s", channel))
 	logger.SysLog(fmt.Sprintf("testing channel #%d, response: \n%s", channel.Id, string(respBody)))
 	return nil, nil
 }

@@ -9,12 +9,12 @@ import (
 	"strings"
 
 	"github.com/gin-gonic/gin"
-	"github.com/songquanpeng/one-api/common"
-	"github.com/songquanpeng/one-api/common/helper"
-	"github.com/songquanpeng/one-api/common/image"
-	"github.com/songquanpeng/one-api/common/logger"
-	"github.com/songquanpeng/one-api/relay/adaptor/openai"
-	"github.com/songquanpeng/one-api/relay/model"
+	"github.com/ticoAg/one-api-new/common"
+	"github.com/ticoAg/one-api-new/common/helper"
+	"github.com/ticoAg/one-api-new/common/image"
+	"github.com/ticoAg/one-api-new/common/logger"
+	"github.com/ticoAg/one-api-new/relay/adaptor/openai"
+	"github.com/ticoAg/one-api-new/relay/model"
 )
 
 func stopReasonClaude2OpenAI(reason *string) string {

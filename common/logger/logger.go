@@ -11,8 +11,8 @@ import (
 	"time"
 
 	"github.com/gin-gonic/gin"
-	"github.com/songquanpeng/one-api/common/config"
-	"github.com/songquanpeng/one-api/common/helper"
+	"github.com/ticoAg/one-api-new/common/config"
+	"github.com/ticoAg/one-api-new/common/helper"
 )
 
 const (

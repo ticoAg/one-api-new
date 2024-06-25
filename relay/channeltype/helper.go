@@ -1,7 +1,7 @@
 package channeltype
 
 import (
-	"github.com/songquanpeng/one-api/relay/apitype"
+	"github.com/ticoAg/one-api-new/relay/apitype"
 )
 
 func ToAPIType(channelType int) int {

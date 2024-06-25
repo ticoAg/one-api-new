@@ -3,10 +3,10 @@ package controller
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/songquanpeng/one-api/common"
-	"github.com/songquanpeng/one-api/common/config"
-	"github.com/songquanpeng/one-api/common/message"
-	"github.com/songquanpeng/one-api/model"
+	"github.com/ticoAg/one-api-new/common"
+	"github.com/ticoAg/one-api-new/common/config"
+	"github.com/ticoAg/one-api-new/common/message"
+	"github.com/ticoAg/one-api-new/model"
 	"net/http"
 	"strings"
 

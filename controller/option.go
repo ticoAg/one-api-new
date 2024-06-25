@@ -2,9 +2,9 @@ package controller
 
 import (
 	"encoding/json"
-	"github.com/songquanpeng/one-api/common/config"
-	"github.com/songquanpeng/one-api/common/helper"
-	"github.com/songquanpeng/one-api/model"
+	"github.com/ticoAg/one-api-new/common/config"
+	"github.com/ticoAg/one-api-new/common/helper"
+	"github.com/ticoAg/one-api-new/model"
 	"net/http"
 	"strings"
 

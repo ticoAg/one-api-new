@@ -2,7 +2,7 @@ package message
 
 import (
 	"fmt"
-	"github.com/songquanpeng/one-api/common/config"
+	"github.com/ticoAg/one-api-new/common/config"
 )
 
 const (

@@ -5,7 +5,7 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"github.com/songquanpeng/one-api/common/ctxkey"
+	"github.com/ticoAg/one-api-new/common/ctxkey"
 	"io"
 	"net/http"
 
@@ -15,11 +15,11 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/jinzhu/copier"
 	"github.com/pkg/errors"
-	"github.com/songquanpeng/one-api/common"
-	"github.com/songquanpeng/one-api/common/helper"
-	"github.com/songquanpeng/one-api/common/logger"
-	"github.com/songquanpeng/one-api/relay/adaptor/anthropic"
-	relaymodel "github.com/songquanpeng/one-api/relay/model"
+	"github.com/ticoAg/one-api-new/common"
+	"github.com/ticoAg/one-api-new/common/helper"
+	"github.com/ticoAg/one-api-new/common/logger"
+	"github.com/ticoAg/one-api-new/relay/adaptor/anthropic"
+	relaymodel "github.com/ticoAg/one-api-new/relay/model"
 )
 
 func wrapErr(err error) *relaymodel.ErrorWithStatusCode {

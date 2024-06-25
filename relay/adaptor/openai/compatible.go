@@ -1,18 +1,18 @@
 package openai
 
 import (
-	"github.com/songquanpeng/one-api/relay/adaptor/ai360"
-	"github.com/songquanpeng/one-api/relay/adaptor/baichuan"
-	"github.com/songquanpeng/one-api/relay/adaptor/deepseek"
-	"github.com/songquanpeng/one-api/relay/adaptor/doubao"
-	"github.com/songquanpeng/one-api/relay/adaptor/groq"
-	"github.com/songquanpeng/one-api/relay/adaptor/lingyiwanwu"
-	"github.com/songquanpeng/one-api/relay/adaptor/minimax"
-	"github.com/songquanpeng/one-api/relay/adaptor/mistral"
-	"github.com/songquanpeng/one-api/relay/adaptor/moonshot"
-	"github.com/songquanpeng/one-api/relay/adaptor/stepfun"
-	"github.com/songquanpeng/one-api/relay/adaptor/togetherai"
-	"github.com/songquanpeng/one-api/relay/channeltype"
+	"github.com/ticoAg/one-api-new/relay/adaptor/ai360"
+	"github.com/ticoAg/one-api-new/relay/adaptor/baichuan"
+	"github.com/ticoAg/one-api-new/relay/adaptor/deepseek"
+	"github.com/ticoAg/one-api-new/relay/adaptor/doubao"
+	"github.com/ticoAg/one-api-new/relay/adaptor/groq"
+	"github.com/ticoAg/one-api-new/relay/adaptor/lingyiwanwu"
+	"github.com/ticoAg/one-api-new/relay/adaptor/minimax"
+	"github.com/ticoAg/one-api-new/relay/adaptor/mistral"
+	"github.com/ticoAg/one-api-new/relay/adaptor/moonshot"
+	"github.com/ticoAg/one-api-new/relay/adaptor/stepfun"
+	"github.com/ticoAg/one-api-new/relay/adaptor/togetherai"
+	"github.com/ticoAg/one-api-new/relay/channeltype"
 )
 
 var CompatibleChannels = []int{

@@ -2,12 +2,12 @@ package model
 
 import (
 	"fmt"
-	"github.com/songquanpeng/one-api/common"
-	"github.com/songquanpeng/one-api/common/config"
-	"github.com/songquanpeng/one-api/common/env"
-	"github.com/songquanpeng/one-api/common/helper"
-	"github.com/songquanpeng/one-api/common/logger"
-	"github.com/songquanpeng/one-api/common/random"
+	"github.com/ticoAg/one-api-new/common"
+	"github.com/ticoAg/one-api-new/common/config"
+	"github.com/ticoAg/one-api-new/common/env"
+	"github.com/ticoAg/one-api-new/common/helper"
+	"github.com/ticoAg/one-api-new/common/logger"
+	"github.com/ticoAg/one-api-new/common/random"
 	"gorm.io/driver/mysql"
 	"gorm.io/driver/postgres"
 	"gorm.io/driver/sqlite"

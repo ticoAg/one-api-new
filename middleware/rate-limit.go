@@ -4,8 +4,8 @@ import (
 	"context"
 	"fmt"
 	"github.com/gin-gonic/gin"
-	"github.com/songquanpeng/one-api/common"
-	"github.com/songquanpeng/one-api/common/config"
+	"github.com/ticoAg/one-api-new/common"
+	"github.com/ticoAg/one-api-new/common/config"
 	"net/http"
 	"time"
 )

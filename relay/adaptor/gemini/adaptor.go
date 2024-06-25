@@ -7,13 +7,13 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/songquanpeng/one-api/common/config"
-	"github.com/songquanpeng/one-api/common/helper"
-	channelhelper "github.com/songquanpeng/one-api/relay/adaptor"
-	"github.com/songquanpeng/one-api/relay/adaptor/openai"
-	"github.com/songquanpeng/one-api/relay/meta"
-	"github.com/songquanpeng/one-api/relay/model"
-	"github.com/songquanpeng/one-api/relay/relaymode"
+	"github.com/ticoAg/one-api-new/common/config"
+	"github.com/ticoAg/one-api-new/common/helper"
+	channelhelper "github.com/ticoAg/one-api-new/relay/adaptor"
+	"github.com/ticoAg/one-api-new/relay/adaptor/openai"
+	"github.com/ticoAg/one-api-new/relay/meta"
+	"github.com/ticoAg/one-api-new/relay/model"
+	"github.com/ticoAg/one-api-new/relay/relaymode"
 )
 
 type Adaptor struct {

@@ -4,12 +4,12 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"github.com/songquanpeng/one-api/common/client"
-	"github.com/songquanpeng/one-api/common/config"
-	"github.com/songquanpeng/one-api/common/logger"
-	"github.com/songquanpeng/one-api/model"
-	"github.com/songquanpeng/one-api/monitor"
-	"github.com/songquanpeng/one-api/relay/channeltype"
+	"github.com/ticoAg/one-api-new/common/client"
+	"github.com/ticoAg/one-api-new/common/config"
+	"github.com/ticoAg/one-api-new/common/logger"
+	"github.com/ticoAg/one-api-new/model"
+	"github.com/ticoAg/one-api-new/monitor"
+	"github.com/ticoAg/one-api-new/relay/channeltype"
 	"io"
 	"net/http"
 	"strconv"
@@ -18,7 +18,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// https://github.com/songquanpeng/one-api/issues/79
+// https://github.com/ticoAg/one-api-new/issues/79
 
 type OpenAISubscriptionResponse struct {
 	Object             string  `json:"object"`

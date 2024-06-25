@@ -3,17 +3,18 @@ package ennew
 import (
 	"errors"
 	"github.com/gin-gonic/gin"
-	"github.com/songquanpeng/one-api/relay/adaptor"
-	"github.com/songquanpeng/one-api/relay/meta"
-	"github.com/songquanpeng/one-api/relay/model"
-	"github.com/songquanpeng/one-api/relay/relaymode"
+	"github.com/ticoAg/one-api-new/relay/adaptor"
+	"github.com/ticoAg/one-api-new/relay/meta"
+	"github.com/ticoAg/one-api-new/relay/model"
+	"github.com/ticoAg/one-api-new/relay/relaymode"
 	"io"
+	// "bytes"
 	"net/http"
 	"fmt"
 	"time"
 	"encoding/json"
-	"net/url"
 )
+import "net/url"
 
 type Adaptor struct {
 	ChannelType int
@@ -35,22 +36,33 @@ func getAPIKey(appKey, appSecret string) (string, error) {
     if apiKey, ok := apiKeyCache[appKey]; ok && time.Now().Before(apiKeyExpireTime[appKey]) {
         return apiKey, nil
     }
-	formData := url.Values{}
-	formData.Set("appKey", appKey)
-	formData.Set("appSecret", appSecret)
 
-	// 配置请求URL: https://middle-open-platform.ennew.com/admin/client/getToken
-    resp, err := http.PostForm("https://middle-open-platform.ennew.com/admin/client/getToken", formData)
-    if err != nil {
-        return "", fmt.Errorf("failed to get API key: %v", err)
-    }
+	baseUrl := "https://middle-open-platform.ennew.com/admin/client/getToken"
+	values := url.Values{}
+	values.Add("appKey", appKey)
+	values.Add("appSecret", appSecret)
+
+	resp, err := http.Get(baseUrl + "?" + values.Encode())
+	if err != nil {
+		return "", fmt.Errorf("filed to get API key: %v", err)
+	}
     defer resp.Body.Close()
+
+	bodyBytes, err := io.ReadAll(resp.Body)
+	if err != nil {
+		return "", fmt.Errorf("failed to read response body: %v", err)
+	}
+    fmt.Println("API Response Body:", string(bodyBytes))
 
     var apiKeyResponse struct {
         Code    int         `json:"code"`
         Data    string      `json:"data"`
     }
-    if err := json.NewDecoder(resp.Body).Decode(&apiKeyResponse); err != nil {
+    // if err := json.NewDecoder(resp.Body).Decode(&apiKeyResponse); err != nil {
+    //     return "", fmt.Errorf("failed to parse API key response: %v", err)
+    // }
+
+	if err := json.Unmarshal(bodyBytes, &apiKeyResponse); err != nil {
         return "", fmt.Errorf("failed to parse API key response: %v", err)
     }
 
@@ -58,7 +70,6 @@ func getAPIKey(appKey, appSecret string) (string, error) {
         return "", fmt.Errorf("failed to get API key, got non-200 status code: %d", apiKeyResponse.Code)
     }
 
-    // 存储API Key和过期时间（过期时间为24小时后）
     apiKeyCache[appKey] = apiKeyResponse.Data
     apiKeyExpireTime[appKey] = time.Now().Add(24 * time.Hour) // 过期时间为24小时后
 

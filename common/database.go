@@ -1,7 +1,7 @@
 package common
 
 import (
-	"github.com/songquanpeng/one-api/common/env"
+	"github.com/ticoAg/one-api-new/common/env"
 )
 
 var UsingSQLite = false

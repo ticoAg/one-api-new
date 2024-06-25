@@ -5,7 +5,7 @@ import (
 	"crypto/tls"
 	"encoding/base64"
 	"fmt"
-	"github.com/songquanpeng/one-api/common/config"
+	"github.com/ticoAg/one-api-new/common/config"
 	"net/smtp"
 	"strings"
 	"time"

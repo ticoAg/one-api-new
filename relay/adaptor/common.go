@@ -4,8 +4,8 @@ import (
 	"errors"
 	"fmt"
 	"github.com/gin-gonic/gin"
-	"github.com/songquanpeng/one-api/common/client"
-	"github.com/songquanpeng/one-api/relay/meta"
+	"github.com/ticoAg/one-api-new/common/client"
+	"github.com/ticoAg/one-api-new/relay/meta"
 	"io"
 	"net/http"
 )

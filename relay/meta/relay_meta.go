@@ -2,10 +2,10 @@ package meta
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/songquanpeng/one-api/common/ctxkey"
-	"github.com/songquanpeng/one-api/model"
-	"github.com/songquanpeng/one-api/relay/channeltype"
-	"github.com/songquanpeng/one-api/relay/relaymode"
+	"github.com/ticoAg/one-api-new/common/ctxkey"
+	"github.com/ticoAg/one-api-new/model"
+	"github.com/ticoAg/one-api-new/relay/channeltype"
+	"github.com/ticoAg/one-api-new/relay/relaymode"
 	"strings"
 )
 

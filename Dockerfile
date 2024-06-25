@@ -31,7 +31,8 @@ ADD go.mod go.sum ./
 RUN go mod download
 COPY . .
 COPY --from=builder /web/build ./web/build
-RUN go build -ldflags "-s -w -X 'github.com/ticoAg/one-api-new/common.Version=$(cat VERSION)' -extldflags '-static'" -o one-api
+# RUN go build -ldflags "-s -w -X 'github.com/ticoAg/one-api-new/common.Version=$(cat VERSION)' -extldflags '-static'" -o one-api
+RUN go build -ldflags "-s -w -extldflags '-static'" -o one-api
 
 FROM alpine
 

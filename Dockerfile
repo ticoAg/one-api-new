@@ -21,13 +21,14 @@ FROM golang AS builder2
 ENV GO111MODULE=on \
     CGO_ENABLED=1 \
     GOOS=linux
+ENV GOPROXY "https://goproxy.cn,direct"
 
 WORKDIR /build
 ADD go.mod go.sum ./
 RUN go mod download
 COPY . .
 COPY --from=builder /web/build ./web/build
-RUN go build -ldflags "-s -w -X 'github.com/songquanpeng/one-api/common.Version=$(cat VERSION)' -extldflags '-static'" -o one-api
+RUN go build -ldflags "-s -w -X 'github.com/ticoAg/one-api-new/common.Version=$(cat VERSION)' -extldflags '-static'" -o one-api
 
 FROM alpine
 

@@ -14,19 +14,19 @@ import (
 	"sync"
 	"time"
 
-	"github.com/songquanpeng/one-api/common/config"
-	"github.com/songquanpeng/one-api/common/ctxkey"
-	"github.com/songquanpeng/one-api/common/logger"
-	"github.com/songquanpeng/one-api/common/message"
-	"github.com/songquanpeng/one-api/middleware"
-	"github.com/songquanpeng/one-api/model"
-	"github.com/songquanpeng/one-api/monitor"
-	relay "github.com/songquanpeng/one-api/relay"
-	"github.com/songquanpeng/one-api/relay/channeltype"
-	"github.com/songquanpeng/one-api/relay/controller"
-	"github.com/songquanpeng/one-api/relay/meta"
-	relaymodel "github.com/songquanpeng/one-api/relay/model"
-	"github.com/songquanpeng/one-api/relay/relaymode"
+	"github.com/ticoAg/one-api-new/common/config"
+	"github.com/ticoAg/one-api-new/common/ctxkey"
+	"github.com/ticoAg/one-api-new/common/logger"
+	"github.com/ticoAg/one-api-new/common/message"
+	"github.com/ticoAg/one-api-new/middleware"
+	"github.com/ticoAg/one-api-new/model"
+	"github.com/ticoAg/one-api-new/monitor"
+	relay "github.com/ticoAg/one-api-new/relay"
+	"github.com/ticoAg/one-api-new/relay/channeltype"
+	"github.com/ticoAg/one-api-new/relay/controller"
+	"github.com/ticoAg/one-api-new/relay/meta"
+	relaymodel "github.com/ticoAg/one-api-new/relay/model"
+	"github.com/ticoAg/one-api-new/relay/relaymode"
 
 	"github.com/gin-gonic/gin"
 )
@@ -119,6 +119,8 @@ func testChannel(channel *model.Channel) (err error, openaiErr *relaymodel.Error
 	if err != nil {
 		return err, nil
 	}
+	// 打印channel的所有信息
+	logger.SysLog(fmt.Sprintf("Current channel: %s", channel))
 	logger.SysLog(fmt.Sprintf("testing channel #%d, response: \n%s", channel.Id, string(respBody)))
 	return nil, nil
 }

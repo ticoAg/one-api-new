@@ -66,6 +66,7 @@ func getAPIKey(appKey, appSecret string) (string, error) {
 }
 func (a *Adaptor) SetupRequestHeader(c *gin.Context, req *http.Request, meta *meta.Meta) error {
 	apiKey, err := getAPIKey(meta.Config.AK, meta.Config.SK)
+	
 	if err != nil {
         return fmt.Errorf("failed to get API key: %v", err)
     }

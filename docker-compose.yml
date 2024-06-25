@@ -2,7 +2,8 @@ version: '3.4'
 
 services:
   one-api:
-    image: "${REGISTRY:-docker.io}/justsong/one-api:latest"
+    # image: "${REGISTRY:-docker.io}/justsong/one-api:latest"
+    image: "registry.cn-beijing.aliyuncs.com/ticoag/one-api:1.2"
     container_name: one-api
     restart: always
     command: --log-dir /app/logs

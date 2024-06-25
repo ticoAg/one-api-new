@@ -122,10 +122,21 @@ _✨ 通过标准的 OpenAI API 格式访问所有的大模型，开箱即用 �
 ### 基于 Docker 进行部署
 ```shell
 # 使用 SQLite 的部署命令：
-docker run --name one-api -d --restart always -p 3000:3000 -e TZ=Asia/Shanghai -v /home/ubuntu/data/one-api:/data justsong/one-api
+docker run --name one-api -d \
+   --restart always \
+   -p 3000:3000 \
+   -e TZ=Asia/Shanghai \
+   -v /home/ubuntu/data/one-api:/data \
+   registry.cn-beijing.aliyuncs.com/ticoag/one-api:1.2
 # 使用 MySQL 的部署命令，在上面的基础上添加 `-e SQL_DSN="root:123456@tcp(localhost:3306)/oneapi"`，请自行修改数据库连接参数，不清楚如何修改请参见下面环境变量一节。
 # 例如：
-docker run --name one-api -d --restart always -p 3000:3000 -e SQL_DSN="root:123456@tcp(localhost:3306)/oneapi" -e TZ=Asia/Shanghai -v /home/ubuntu/data/one-api:/data justsong/one-api
+docker run --name one-api -d \
+   --restart always \
+   -p 3000:3000 \
+   -e SQL_DSN="root:123456@tcp(localhost:3306)/oneapi" \
+   -e TZ=Asia/Shanghai \
+   -v /home/ubuntu/data/one-api:/data \
+   registry.cn-beijing.aliyuncs.com/ticoag/one-api:1.2
 ```
 
 其中，`-p 3000:3000` 中的第一个 `3000` 是宿主机的端口，可以根据需要进行修改。
